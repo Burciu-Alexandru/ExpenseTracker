@@ -9,7 +9,12 @@ const App = () => {
       amount: 94.12,
       date: new Date(2020, 7, 14),
     },
-    { id: "e2", title: "Tv cu diagonala sa moara dujmani de ciuda", amount: 799.49, date: new Date(2021, 2, 12) },
+    {
+      id: "e2",
+      title: "Tv cu diagonala sa moara dujmani de ciuda",
+      amount: 799.49,
+      date: new Date(2021, 2, 12),
+    },
     {
       id: "e3",
       title: "Asigurare la Cazan",
@@ -23,10 +28,19 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  const addExpenseHandler = (expense) => {
+    console.log("In App.js");
+    console.log(expense);
+  };
+
+  const getFilterHandler = (date) =>{
+    console.log(date);
+  }
   return (
     <div>
-      <NewExpense/>
-      <ExpensesList expenses={expenses} />
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <ExpensesList expenses={expenses} onGetFiler={getFilterHandler} />
     </div>
   );
 };
