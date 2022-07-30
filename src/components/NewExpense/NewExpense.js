@@ -11,8 +11,9 @@ const NewExpense = (props) => {
       ...enteredExpenseData,
       id: Math.random().toString(),
     };
+    console.log('new expense');
     props.onAddExpense(expenseData);
-    setAddNew(false);
+    //setAddNew(false);
   };
 
   const startEditinHanler = () => {
@@ -24,16 +25,17 @@ const NewExpense = (props) => {
   };
 
   return (
-    <div className="new-expense">
-      {!addNew && <button onClick={startEditinHanler}>Add new Expense</button>}
+    <div className='new-expense'>
+      {!addNew && (
+        <button onClick={startEditinHanler}>Add New Expense</button>
+      )}
       {addNew && (
         <ExpenseForm
           onSaveExpenseData={saveExpenseDataHandler}
-          onStopingEditing={stopEditingHanlder}
+          onCancel={stopEditingHanlder}
         />
       )}
     </div>
   );
 };
-
 export default NewExpense;
