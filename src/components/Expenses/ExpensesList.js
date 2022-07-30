@@ -4,6 +4,7 @@ import Card from "../UI/Card";
 import "./ExpensesList.css";
 import ExpensesFilter from "../NewExpense/ExpenseFilter";
 import ExpensesListList from "./ExpensesListList";
+import ExpesesChart from "./ExpensesChart";
 //prima tema
 //a doua tema
 const ExpensesList = (props) => {
@@ -26,6 +27,7 @@ const ExpensesList = (props) => {
           selected={filteredYear}
           onGetFileteredData={filterChangeHandler}
         />
+        <ExpesesChart expenses={subarray}/>
         <ExpensesListList items={subarray}/>
       </Card>
     </div>

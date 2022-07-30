@@ -32,7 +32,7 @@ const NewExpense = (props) => {
       {addNew && (
         <ExpenseForm
           onSaveExpenseData={saveExpenseDataHandler}
-          onCancel={stopEditingHanlder}
+          onStopingEditingl={stopEditingHanlder}
         />
       )}
     </div>
